@@ -33,6 +33,9 @@ body {
     width: 56%;
     display: inline-block;
     flex-grow: 1;
+    padding-left: 10px;
+    box-sizing: border-box;
+    font-size: 18px;
 }
 .task-wrapper {
     display: flex;
@@ -83,6 +86,7 @@ input[type="text"] {
     border-radius: 6px;
     font-family: Lato, sans-serif;
     color: #888;
+    width: 226px;
 }
 input[type="text"]:focus {
     color: #333;
@@ -102,27 +106,15 @@ li {
     overflow: hidden;
     padding: 20px 0;
     border-bottom: 1px solid #eee;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-li > * {
-    vertical-align: middle;
-}
 
-li > input[type="checkbox"] {
+input[type="checkbox"] {
     margin: 0 10px;
 }
-li > label {
-    padding-left: 10px;
-    box-sizing: border-box;
-    font-size: 18px;
-    width: 226px;
-}
-li > input[type="text"] {
-    width: 226px
-}
+
 button.delete img {
     height: 2em;
     transform: rotateZ(45deg);
@@ -139,7 +131,7 @@ button.delete img {
 }
 
 /* Edit Task */
-ul li input[type="text"] {
+li input[type="text"] {
     display: none;
 }
 
