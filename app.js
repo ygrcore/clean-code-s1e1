@@ -34,7 +34,7 @@ function createElement(tagName, className, innerText) {
 
 var addTask = function(){
     //Create a new list item with the text from the #new-task:
-    if (!taskInput.value) return;
+    if (!taskInput.value || taskInput.value.trim() == '') return;
     var listItem = createNewTaskElement(taskInput.value);
 
     incompleteTaskHolder.appendChild(listItem);
