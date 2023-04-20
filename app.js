@@ -10,32 +10,26 @@ var createNewTaskElement = function(taskString){
 
     var listItem = document.createElement("li");
     var checkBox = document.createElement("input");
-    var label = document.createElement("label");
-    var editInput = document.createElement("input");
-    var editButton = document.createElement("button");
-    var deleteButton = document.createElement("button");
+    var label = createElement("label", 'task', taskString);
+    var editInput = createElement("input", "task");
+    var editButton = createElement("button", "edit", "Edit");
+    var deleteButton = createElement("button", "delete");
     var deleteButtonImg = document.createElement("img");
-
-    label.innerText = taskString;
-    label.className = 'task';
 
     checkBox.type = "checkbox";
     editInput.type = "text";
-    editInput.className = "task";
-
-    editButton.innerText = "Edit";
-    editButton.className = "edit";
-
-    deleteButton.className = "delete";
     deleteButtonImg.src = './remove.svg';
     deleteButton.appendChild(deleteButtonImg);
 
-    listItem.appendChild(checkBox);
-    listItem.appendChild(label);
-    listItem.appendChild(editInput);
-    listItem.appendChild(editButton);
-    listItem.appendChild(deleteButton);
+    listItem.append(checkBox, label, editInput, editButton, deleteButton);
     return listItem;
+}
+
+function createElement(tagName, className, innerText) {
+    const element = document.createElement(tagName);
+    element.classList.add(className);
+    element.textContent = innerText;
+    return element;
 }
 
 var addTask = function(){
